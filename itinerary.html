@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Trip Itinerary</title>
+    <link rel="stylesheet" href="itinerary.css">
+</head>
+<body>
+    
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p id="loading-text"></p>
+    </div>
+
+    <div id="cover-screen">
+        <h1>誕生日おめでとう</h1>
+        <button id="open-btn">しおりを開く</button>
+    </div>
+
+    <div id="itinerary-content">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#itinerary-content">トップへ</a></li>
+                <li><a href="profile.html">大石啓太とは？</a></li>
+                <li><a href="album.html">アルバム</a></li>
+                <li><a href="index.html">カウントダウンへ戻る</a></li>
+            </ul>
+        </nav>
+        
+        <header>
+            <h1>誕生日おめでとう！</h1>
+            
+            <div class="main-surprise fade-in">
+    <div class="surprise-badge">Present</div>
+    <h2>♨️ 箱根旅行をプレゼントします ♨️</h2>
+    <p>日頃の感謝を込めて、<br>ゆっくり過ごせるといいね。</p>
+</div>
+        </header>
+        
+        <div class="spotify-container">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3WC5CVAahvn98hiseoIvbw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="container">
+
+            <div class="timeline">
+                <div class="event fade-in">
+                    <div class="time">8:00</div>
+                    <div class="content">
+                        <h2>お迎え</h2>
+                        <p>旅行帰りで申し訳ない、、、</p>
+                    </div>
+                </div>
+                <div class="event fade-in">
+                    <div class="time">10:30</div>
+                    <div class="content">
+                        <h2>海老名sa着</2>
+                        <p>休憩！ご当地もの食べれたらいいね</p>
+                    </div>
+                </div>
+                <div class="event fade-in">
+                    <div class="time">12:00</div>
+                    <div class="content">
+                        <h2>彫刻の森美術館</2>
+                        <p>昼食と映える写真撮りましょう</p>
+                    </div>
+                </div><div class="event fade-in">
+                    <div class="time">15:00</div>
+                    <div class="content">
+                        <h2>大涌谷</2>
+                        <p>自然界隈いっしょに！</p>
+                    </div>
+                </div><div class="event fade-in">
+                    <div class="time">17:00</div>
+                    <div class="content">
+                        <h2>ホテル着</2>
+                        <p>ホテルでゆっくりしましょう！朝食と夕食ついてるよ</p>
+                    </div>
+                </div><div class="event fade-in">
+                    <div class="time">2日目11:00</div>
+                    <div class="content">
+                        <h2>チェックアウト</2>
+                        <p>友達と会うらしいから東京で降ろそうかな？</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clothing-hint fade-in">
+                <h2>👗 服装のヒント</h2>
+                <p>明日明後日の天気は晴れ予報！さすが晴れ男だね^^<br>
+                標高が高いので平均7℃で少し肌寒いかもね。</p>
+                <p>適宜コース変更予定！疲れたまってたらホテルでゆっくりでもいいね。</p>
+            </div>
+
+            <div class="secret-letter-container fade-in">
+                <button id="letter-btn" class="letter-btn">open</button>
+                <div id="secret-letter" class="secret-letter">
+                    <p>お誕生日おめでとう！<br>
+                    自分の誕生日のときは思い出作り系（？）にしてくれたから俺も旅行にしてみたよ。<br>
+                    本当はバッグとか上げようかなーって思ってたけどなんかつまらないしクリスマスあげたし！。<br>
+                    北海道行っても忘れないでね！最高の誕生日にしようね！</p>
+                    
+                    <div class="audio-message">
+                        <audio controls src="message.mp3.m4a"></audio>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+        <footer>
+            <div class="footer-links">
+                <h3>Page Menu</h3>
+                <ul>
+                    <li><a href="countdown.html">カウントダウンへ戻る</a></li>
+                    <li><a href="#itinerary-content">しおりのトップへ</a></li>
+                </ul>
+                <p>© 2026 Special Birthday Trip</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="itinerary.js"></script>
+</body>
+</html>

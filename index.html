@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>誕生日カウントダウン</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #555;
+        }
+        #start-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+        }
+        #start-btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: white;
+            color: #ff758c;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        #start-btn:active {
+            transform: scale(0.95);
+        }
+        #main-content {
+            display: none;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff758c;
+            margin-bottom: 20px;
+        }
+        #countdown {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .time-box {
+            background: #ff758c;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 60px;
+        }
+        .time-box span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+        #message {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff758c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff5e78;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bgm" src="music.mp3" loop></audio>
+
+    <div id="start-screen">
+        <h2>大切なプレゼントがあります🎁</h2>
+        <button id="start-btn">タップして開ける</button>
+    </div>
+
+    <div id="main-content" class="container">
+        <div id="countdown-section">
+            <h1>誕生日まであと...</h1>
+            <div id="countdown">
+                <div class="time-box"><span id="days"></span><span>日</span></div>
+                <div class="time-box"><span id="hours"></span><span>時間</span></div>
+                <div class="time-box"><span id="minutes"></span><span>分</span></div>
+                <div class="time-box"><span id="seconds"></span><span>秒</span></div>
+            </div>
+        </div>
+        <div id="message">
+            <h1>🎉 お誕生日おめでとう！ 🎉</h1>
+            <p>今年の誕生日は特別な旅をプレゼントします。</p>
+            <a href="itinerary.html" class="btn">旅のしおりを開く</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('start-btn').addEventListener('click', function() {
+            document.getElementById('bgm').play();
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        });
+
+        const countDownDate = new Date("2026-03-11T00:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown-section").style.display = "none";
+                document.getElementById("message").style.display = "block";
+            }
+        }, 1000);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'b' || event.key === 'B') {
+                clearInterval(timer);
+                document.getElementById("countdown-section").style.display = "none";
+                document.getElementById("message").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
