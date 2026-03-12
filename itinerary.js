@@ -3,10 +3,10 @@ document.getElementById('open-btn').addEventListener('click', function() {
     
     // 表示させたいメッセージのリスト（いくつでも増やせます）
     const messages = [
-        "誕生日おめでとう！",
-        "誕生日おめでとう！",
-        "誕生日おめでとう！",
-        "誕生日おめでとう！",
+        "ちんちん！",
+        "大好き！",
+        "おっぱい！",
+        "結婚したい！",
         "おっぱい"
     ];
     
